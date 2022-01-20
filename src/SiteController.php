@@ -3,21 +3,21 @@
 namespace Laloinsane\Site;
 
 use Illuminate\Http\Request;
-use Laloinsane\Site\Site;
+// use Laloinsane\Site\Site;
 
 class SiteController extends Controller
 {
-    public function index()
-    {
-        return redirect()->route('site.create');
-    }
+    // public function index()
+    // {
+    //     return redirect()->route('site.create');
+    // }
 
-    public function create()
-    {
-        $sites = Site::all();
-        $submit = 'Add';
-        return view('laloinsane.site.list', compact('sites', 'submit'));
-    }
+    // public function create()
+    // {
+    //     $sites = Site::all();
+    //     $submit = 'Add';
+    //     return view('laloinsane.site.list', compact('sites', 'submit'));
+    // }
 
     // public function store()
     // {
