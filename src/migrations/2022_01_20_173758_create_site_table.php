@@ -15,7 +15,7 @@ class CreateSiteTable extends Migration
     {
         Schema::create('site', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('dns');
             $table->timestamps();
         });
     }
