@@ -2,15 +2,20 @@
 
 namespace Laloinsane\Site\Controllers;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Laloinsane\Site\Models\Site;
+use Illuminate\Http\Request;
+use Inertia\Inertia;
+use App\Http\Controllers\Controller;
 
 class SiteController extends Controller
 {
     public function index()
     {
-        return "Hola mundo";
+        $items = Site::all();
+        $total = Site::count();
+        return Inertia::render('Site/Index', ['sites' => $items, 'total' => $total]);
+
+        // return "Hola mundo";
         // return redirect()->route('site.create');
     }
 
