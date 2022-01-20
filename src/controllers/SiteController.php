@@ -8,10 +8,11 @@ use App\Http\Controllers\Controller;
 
 class SiteController extends Controller
 {
-    // public function index()
-    // {
-    //     return redirect()->route('site.create');
-    // }
+    public function index()
+    {
+        return "Hola mundo";
+        // return redirect()->route('site.create');
+    }
 
     // public function create()
     // {
