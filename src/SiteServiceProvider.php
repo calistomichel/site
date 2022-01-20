@@ -15,7 +15,7 @@ final class SiteServiceProvider extends Provider
     {
         $this->loadRoutesFrom(__DIR__.'/routes.php');
         $this->loadMigrationsFrom(__DIR__.'/migrations');
-        $this->loadViewsFrom(__DIR__.'/views');
+        $this->loadViewsFrom(__DIR__.'/views', 'site');
         $this->publishes([
             __DIR__.'/views/inertia' => base_path('resources/js/Pages'),
         ]);
