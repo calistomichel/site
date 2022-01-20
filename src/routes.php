@@ -1,2 +1,2 @@
 <?php
-Route::resource('/site', 'Laloinsane\Site\SiteController');
+Route::resource('/site', 'Laloinsane\Site\Controllers\SiteController');
