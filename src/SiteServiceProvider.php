@@ -1,6 +1,6 @@
 <?php
 
-namespace laloinsane\site;
+namespace Laloinsane\Site;
 
 use Illuminate\Support\ServiceProvider as Provider;
 
@@ -13,6 +13,7 @@ final class SiteServiceProvider extends Provider
      */
     public function boot(): void
     {
+        $this->loadMigrationsFrom(__DIR__.'/migrations');
         $this->loadViewsFrom(__DIR__.'/views', 'todolist');
         $this->publishes([
             __DIR__.'/views' => base_path('resources/views/wisdmlabs/todolist'),
