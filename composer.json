@@ -1,0 +1,24 @@
+{
+    "name": "laloinsane/site",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Laloinsane\\Site\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "laloinsane",
+            "email": "calisto.michel@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "laloinsane\\site\\SiteServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}
