@@ -15,10 +15,13 @@ final class SiteServiceProvider extends Provider
     {
         $this->loadRoutesFrom(__DIR__.'/routes.php');
         $this->loadMigrationsFrom(__DIR__.'/migrations');
-        $this->loadViewsFrom(__DIR__.'/views', 'site');
+        $this->loadViewsFrom(__DIR__.'/views');
         $this->publishes([
-            __DIR__.'/views' => base_path('resources/views/laloinsane/site'),
+            __DIR__.'/views/inertia' => base_path('resources/js/Pages'),
         ]);
+        // $this->publishes([
+        //     __DIR__.'/views' => base_path('resources/views/laloinsane/site'),
+        // ]);
     }
 
     /**
