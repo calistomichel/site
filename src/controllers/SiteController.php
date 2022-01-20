@@ -3,6 +3,7 @@
 namespace Laloinsane\Site\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 // use Laloinsane\Site\Site;
 
 class SiteController extends Controller
