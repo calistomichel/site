@@ -1,6 +1,6 @@
 <?php
 
-namespace Laloinsane\Site;
+namespace Laloinsane\Site\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -15,6 +15,6 @@ class Site extends Model
      * @var string[]
      */
     protected $fillable = [
-        'name',
+        'dns',
     ];
 }

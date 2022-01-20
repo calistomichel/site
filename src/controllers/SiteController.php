@@ -4,7 +4,7 @@ namespace Laloinsane\Site\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-// use Laloinsane\Site\Site;
+use Laloinsane\Site\Models\Site;
 
 class SiteController extends Controller
 {

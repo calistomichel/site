@@ -1,17 +1,20 @@
 {
     "name": "laloinsane/site",
+    "description": "Site is a Laravel package.",
+    "keywords": ["laravel", "site"],
+    "homepage": "https://github.com/laloinsane/site",
     "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "Laloinsane\\Site\\": "src/"
-        }
-    },
     "authors": [
         {
             "name": "laloinsane",
             "email": "calisto.michel@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Laloinsane\\Site\\": "src/"
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [
