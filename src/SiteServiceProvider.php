@@ -28,6 +28,6 @@ final class SiteServiceProvider extends Provider
      */
     public function register(): void
     {
-        // $this->app->make('laloinsane\site\SiteController');
+        $this->app->make('Laloinsane\Site\SiteController');
     }
 }
