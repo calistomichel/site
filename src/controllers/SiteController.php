@@ -1,6 +1,6 @@
 <?php
 
-namespace Laloinsane\Site;
+namespace Laloinsane\Site\Controllers;
 
 use Illuminate\Http\Request;
 // use Laloinsane\Site\Site;
