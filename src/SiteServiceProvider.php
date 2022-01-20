@@ -13,10 +13,11 @@ final class SiteServiceProvider extends Provider
      */
     public function boot(): void
     {
+        $this->loadRoutesFrom(__DIR__.'/routes.php');
         $this->loadMigrationsFrom(__DIR__.'/migrations');
-        $this->loadViewsFrom(__DIR__.'/views', 'todolist');
+        $this->loadViewsFrom(__DIR__.'/views', 'site');
         $this->publishes([
-            __DIR__.'/views' => base_path('resources/views/wisdmlabs/todolist'),
+            __DIR__.'/views' => base_path('resources/views/laloinsane/site'),
         ]);
     }
 
@@ -27,6 +28,6 @@ final class SiteServiceProvider extends Provider
      */
     public function register(): void
     {
-        // 
+        $this->app->make('laloinsane\site\SiteController');
     }
 }
