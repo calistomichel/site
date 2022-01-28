@@ -1,6 +1,6 @@
 {
     "name": "laloinsane/site",
-    "description": "Site is a Laravel package.",
+    "description": "Site scaffolding for the Laravel framework.",
     "keywords": ["laravel", "site"],
     "homepage": "https://github.com/laloinsane/site",
     "license": "MIT",
@@ -10,12 +10,18 @@
             "email": "calisto.michel@gmail.com"
         }
     ],
+    "require": {
+        "php": "^7.3|^8.0"
+    },
     "autoload": {
         "psr-4": {
             "Laloinsane\\Site\\": "src/"
         }
     },
     "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        },
         "laravel": {
             "providers": [
                 "Laloinsane\\Site\\SiteServiceProvider"
@@ -23,5 +29,5 @@
         }
     },
     "minimum-stability": "dev",
-    "require": {}
+    "prefer-stable": true
 }
