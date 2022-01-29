@@ -1,6 +1,6 @@
 <?php
 
-namespace Laloinsane\Site;
+namespace CalistoMichel\Site;
 
 use Illuminate\Support\ServiceProvider as Provider;
 

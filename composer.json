@@ -1,12 +1,12 @@
 {
-    "name": "laloinsane/site",
+    "name": "calistomichel/site",
     "description": "Site scaffolding for the Laravel framework.",
     "keywords": ["laravel", "site"],
-    "homepage": "https://github.com/laloinsane/site",
+    "homepage": "https://github.com/calistomichel/site",
     "license": "MIT",
     "authors": [
         {
-            "name": "laloinsane",
+            "name": "Calisto Michel",
             "email": "calisto.michel@gmail.com"
         }
     ],
@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Laloinsane\\Site\\": "src/"
+            "CalistoMichel\\Site\\": "src/"
         }
     },
     "extra": {
@@ -24,7 +24,7 @@
         },
         "laravel": {
             "providers": [
-                "Laloinsane\\Site\\SiteServiceProvider"
+                "CalistoMichel\\Site\\SiteServiceProvider"
             ]
         }
     },
