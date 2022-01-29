@@ -13,6 +13,7 @@ final class SiteServiceProvider extends Provider
      */
     public function boot(): void
     {
+        $this->configurePublishing();
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
         // $this->loadMigrationsFrom(__DIR__.'/migrations');
         // $this->loadViewsFrom(__DIR__.'/views/inertia', 'site');
