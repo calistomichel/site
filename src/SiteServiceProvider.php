@@ -13,6 +13,8 @@ final class SiteServiceProvider extends Provider
      */
     public function boot(): void
     {
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'site');
+
         $this->configurePublishing();
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
         // $this->loadMigrationsFrom(__DIR__.'/migrations');
@@ -39,13 +41,13 @@ final class SiteServiceProvider extends Provider
      */
     protected function configurePublishing()
     {
-        // if (! $this->app->runningInConsole()) {
-        //     return;
-        // }
-
         $this->publishes([
             __DIR__.'/../config/site.php' => config_path('site.php'),
         ], 'site-config');
+
+        $this->publishes([
+            __DIR__.'/../resources/views' => resource_path('resources/js/Pages'),
+        ], 'site-views');
 
         // $this->publishes([
         //     __DIR__.'/../resources/views' => resource_path('views/vendor/jetstream'),
