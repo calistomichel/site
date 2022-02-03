@@ -1,8 +1,8 @@
 <?php
 
-namespace Laloinsane\Site\Controllers;
+namespace MichelCalisto\Site\Http\Controllers;
 
-use Laloinsane\Site\Models\Site;
+use MichelCalisto\Site\Models\Site;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Http\Controllers\Controller;
