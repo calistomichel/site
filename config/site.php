@@ -1,6 +1,6 @@
 <?php
 
-use CalistoMichel\Site\Features;
+use MichelCalisto\Site\Features;
 
 return [
 

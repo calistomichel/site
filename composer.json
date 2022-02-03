@@ -1,12 +1,12 @@
 {
-    "name": "calistomichel/site",
+    "name": "michelcalisto/site",
     "description": "Site scaffolding for the Laravel framework using inertia stack.",
     "keywords": ["laravel", "site"],
-    "homepage": "https://github.com/calistomichel/site",
+    "homepage": "https://github.com/michelcalisto/site",
     "license": "MIT",
     "authors": [
         {
-            "name": "Calisto Michel",
+            "name": "Michel Calisto",
             "email": "calisto.michel@gmail.com"
         }
     ],
@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "CalistoMichel\\Site\\": "src/"
+            "MichelCalisto\\Site\\": "src/"
         }
     },
     "extra": {
@@ -24,7 +24,7 @@
         },
         "laravel": {
             "providers": [
-                "CalistoMichel\\Site\\SiteServiceProvider"
+                "MichelCalisto\\Site\\SiteServiceProvider"
             ]
         }
     },
