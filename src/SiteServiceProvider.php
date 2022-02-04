@@ -43,7 +43,7 @@ final class SiteServiceProvider extends Provider
         ], 'site-config');
 
         $this->publishes([
-            __DIR__.'/../resources/views' => resource_path('resources/js/Pages'),
+            __DIR__.'/../resources/views' => resource_path('js/Pages'),
         ], 'site-views');
 
         $this->publishes([
