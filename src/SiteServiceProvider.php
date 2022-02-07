@@ -46,7 +46,7 @@ final class SiteServiceProvider extends Provider
         ], 'site-migrations');
 
         $this->publishes([
-            __DIR__.'/../routes/web.php' => base_path('routes/site.php'),
+            __DIR__.'/../routes/site.php' => base_path('routes/site.php'),
         ], 'site-routes');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace MichelCalisto\Site\Models;
+namespace MichelCalisto\Site;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
