@@ -2,7 +2,7 @@
 
 namespace MichelCalisto\Site\Http\Controllers;
 
-use MichelCalisto\Site\Models\Site;
+use MichelCalisto\Site\Site;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Http\Controllers\Controller;
