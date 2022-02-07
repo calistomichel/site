@@ -13,10 +13,7 @@ class SiteController extends Controller
     {
         $items = Site::all();
         $total = Site::count();
-        return Inertia::render('Site/Index', ['sites' => $items, 'total' => $total]);
-
-        // return "Hola mundo";
-        // return redirect()->route('site.create');
+        return Inertia::render('Site/Index', ['items' => $items, 'total' => $total]);
     }
 
     // public function create()

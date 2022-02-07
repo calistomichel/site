@@ -7,28 +7,23 @@ use Illuminate\Support\ServiceProvider as Provider;
 final class SiteServiceProvider extends Provider
 {
     /**
-     * Bootstrap the application services.
-     *
-     * @return void
-     */
-    public function boot(): void
-    {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'site');
-
-        $this->configurePublishing();
-        // $this->loadRoutesFrom(__DIR__.'/routes.php');
-        // $this->loadMigrationsFrom(__DIR__.'/migrations');
-
-    }
-
-    /**
      * Register the application services.
      *
      * @return void
      */
     public function register(): void
     {
-        // $this->app->make('Laloinsane\Site\Controllers\SiteController');
+
+    }
+
+    /**
+     * Bootstrap the application services.
+     *
+     * @return void
+     */
+    public function boot(): void
+    {
+        $this->configurePublishing();
     }
 
         /**
@@ -38,9 +33,9 @@ final class SiteServiceProvider extends Provider
      */
     protected function configurePublishing()
     {
-        $this->publishes([
-            __DIR__.'/../config/site.php' => config_path('site.php'),
-        ], 'site-config');
+        // $this->publishes([
+        //     __DIR__.'/../config/site.php' => config_path('site.php'),
+        // ], 'site-config');
 
         $this->publishes([
             __DIR__.'/../resources/views' => base_path('resources/'),
