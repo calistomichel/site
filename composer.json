@@ -1,6 +1,6 @@
 {
     "name": "michelcalisto/site",
-    "description": "Site scaffolding for the Laravel framework using inertia stack.",
+    "description": "Tailwind Site scaffolding for the Laravel framework using inertia stack.",
     "keywords": ["laravel", "site"],
     "homepage": "https://github.com/michelcalisto/site",
     "license": "MIT",
