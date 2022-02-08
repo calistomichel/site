@@ -20,7 +20,7 @@
                             </div>
 
                             <div class="flex items-center justify-end mt-4">
-                                <Link :href="route('images.index')" class="inline-flex items-center px-4 py-2 bg-gray-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-400 active:bg-gray-600 focus:outline-none focus:border-gray-600 focus:ring focus:ring-gray-300 disabled:opacity-25 transition ml-4" type="button">
+                                <Link :href="route('sites.index')" class="inline-flex items-center px-4 py-2 bg-gray-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-400 active:bg-gray-600 focus:outline-none focus:border-gray-600 focus:ring focus:ring-gray-300 disabled:opacity-25 transition ml-4" type="button">
                                     Cancel
                                 </Link> 
                                 <jet-button class="ml-4">

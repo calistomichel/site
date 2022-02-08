@@ -54,9 +54,9 @@ class SiteController extends Controller
      * @param  \MichelCalisto\Site\Site  $site
      * @return \Illuminate\Http\Response
      */
-    public function edit(Site $item)
+    public function edit(Site $site)
     {
-        return Inertia::render('Site/Edit', ['item' => $item]);
+        return Inertia::render('Site/Edit', ['item' => $site]);
     }
 
     /**
@@ -66,13 +66,13 @@ class SiteController extends Controller
      * @param  \MichelCalisto\Site\Site  $site
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Site $item)
+    public function update(Request $request, Site $site)
     {
         $request->validate([
-            'dns' => 'required|unique:sites,dns,'.$item->id.'|min:3|max:50',
+            'dns' => 'required|unique:sites,dns,'.$site->id.'|min:3|max:50',
         ]);
 
-        $item->update([
+        $site->update([
             'dns' => $request->dns,
         ]);
 
@@ -85,9 +85,9 @@ class SiteController extends Controller
      * @param  \MichelCalisto\Site\Site  $site
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Site $item)
+    public function destroy(Site $site)
     {
-        $item->delete();
+        $site->delete();
         return Redirect::route('sites.index');
     }
 }
