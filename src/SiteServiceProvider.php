@@ -26,7 +26,7 @@ final class SiteServiceProvider extends Provider
         $this->configurePublishing();
     }
 
-        /**
+    /**
      * Configure publishing for the package.
      *
      * @return void

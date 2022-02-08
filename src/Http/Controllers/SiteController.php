@@ -6,9 +6,16 @@ use MichelCalisto\Site\Site;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Redirect;
+use MichelCalisto\Site\Http\Requests\StoreSite;
 
 class SiteController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $items = Site::all();
@@ -16,40 +23,71 @@ class SiteController extends Controller
         return Inertia::render('Site/Index', ['items' => $items, 'total' => $total]);
     }
 
-    // public function create()
-    // {
-    //     $sites = Site::all();
-    //     $submit = 'Add';
-    //     return view('laloinsane.site.list', compact('sites', 'submit'));
-    // }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return Inertia::render('Site/Create');
+    }
 
-    // public function store()
-    // {
-    //     $input = Request::all();
-    //     Task::create($input);
-    //     return redirect()->route('task.create');
-    // }
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \MichelCalisto\Site\Http\Requests\StoreSite $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(StoreSite $request)
+    {
+        $data = Site::create([
+            'dns' => $request->dns
+        ]);
 
-    // public function edit($id)
-    // {
-    //     $tasks = Task::all();
-    //     $task = $tasks->find($id);
-    //     $submit = 'Update';
-    //     return view('wisdmlabs.todolist.list', compact('tasks', 'task', 'submit'));
-    // }
+        return Redirect::route('sites.index');
+    }
 
-    // public function update($id)
-    // {
-    //     $input = Request::all();
-    //     $task = Task::findOrFail($id);
-    //     $task->update($input);
-    //     return redirect()->route('task.create');
-    // }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \MichelCalisto\Site\Site  $site
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Site $site)
+    {
+        return Inertia::render('Site/Edit', ['site' => $site]);
+    }
 
-    // public function destroy($id)
-    // {
-    //     $task = Task::findOrFail($id);
-    //     $task->delete();
-    //     return redirect()->route('task.create');
-    // }
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \MichelCalisto\Site\Site  $site
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Site $site)
+    {
+        $request->validate([
+            'dns' => 'required|unique:sites,dns,'.$site->id,
+        ]);
+
+        $site->update([
+            'dns' => $request->dns,
+        ]);
+
+        return Redirect::route('sites.index');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \MichelCalisto\Site\Site  $site
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Site $site)
+    {
+        $site->delete();
+        return Redirect::route('sites.index');
+    }
 }
