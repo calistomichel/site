@@ -53,16 +53,16 @@
             JetButton,
         },
         props: {
-            site: Object,
+            item: Object,
             errors: Object,
         },
         setup (props) {
             const form = useForm({
-                dns: props.site.dns
+                dns: props.item.dns
             })
 
             function submit() {
-                this.$inertia.post('/sites/'+props.site.id, {
+                this.$inertia.post('/sites/'+props.item.id, {
                     _method: 'put',
                     dns: this.form.dns
                 })
