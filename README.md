@@ -10,5 +10,5 @@ Andamiajes para la contrucción de un Tailwind Site a través del framework Lara
 ![Inertia](https://img.shields.io/badge/Inertia-v0.10.0-blue)
 
 <p align="left">
-  <a href="https://packagist.org/packages/michelcalisto/site" target="_blank"><img src="https://gist.githubusercontent.com/michelcalisto/b7f2892d361e25c684a5c5b692852ac6/raw/2d2b8577ac6693b4354b858dc4a60f4af08d525f/packagist-badge.png" alt="Packagist" height="60"></a>
+  <a href="https://packagist.org/packages/michelcalisto/site" target="_blank"><img src="https://gist.githubusercontent.com/michelcalisto/b7f2892d361e25c684a5c5b692852ac6/raw/2d2b8577ac6693b4354b858dc4a60f4af08d525f/packagist-badge.png" alt="Packagist" height="120"></a>
 </p>
