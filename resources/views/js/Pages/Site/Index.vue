@@ -8,15 +8,15 @@
 
         <div>
             <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-
-                    <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
-
+                
+                <index-template>
+                    <template #actions>
                         <Link :href="route('sites.create')" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" type="button">
                             New Site
                         </Link>
-
-                        <table class="min-w-full text-center mt-8">
+                    </template>
+                    <template #content>
+                        <table class="min-w-full text-center">
                             <thead class="border-b bg-gray-50">
                                 <tr>
                                     <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
@@ -52,9 +52,9 @@
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
+                    </template>
+                </index-template>
 
-                </div>
             </div>
         </div>
     </app-layout>
@@ -63,16 +63,18 @@
 <script>
     import { defineComponent } from 'vue'
     import AppLayout from '@/Layouts/AppLayout.vue'
-    import JetButton from '@/Jetstream/Button.vue'
+    import { Link } from '@inertiajs/inertia-vue3'
+    import IndexTemplate from '@/MichelCalisto/IndexTemplate.vue'
 
     export default defineComponent({
         components: {
             AppLayout,
-            JetButton,
+            Link,
+            IndexTemplate,
         },
         props: {
             items: Array,
-            count: Number
+            count: Number,
         },
     })
 </script>
