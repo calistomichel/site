@@ -11,9 +11,9 @@
                 
                 <index-template>
                     <template #actions>
-                        <Link :href="route('sites.create')" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" type="button">
-                            New Site
-                        </Link>
+                        <button-primary :href="route('sites.create')">
+                            New Ste
+                        </button-primary>
                     </template>
                     <template #content>
                         <table class="min-w-full text-center">
@@ -65,12 +65,14 @@
     import AppLayout from '@/Layouts/AppLayout.vue'
     import { Link } from '@inertiajs/inertia-vue3'
     import IndexTemplate from '@/MichelCalisto/IndexTemplate.vue'
+    import ButtonPrimary from '@/MichelCalisto/ButtonPrimary.vue'
 
     export default defineComponent({
         components: {
             AppLayout,
             Link,
             IndexTemplate,
+            ButtonPrimary,
         },
         props: {
             items: Array,
