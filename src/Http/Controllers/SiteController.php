@@ -49,6 +49,17 @@ class SiteController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  \MichelCalisto\Site\Site  $site
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Site $site)
+    {
+        return Inertia::render('Site/Show', ['item' => $site]);
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  \MichelCalisto\Site\Site  $site
