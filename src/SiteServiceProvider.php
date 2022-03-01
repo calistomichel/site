@@ -43,6 +43,7 @@ final class SiteServiceProvider extends Provider
 
         $this->publishes([
             __DIR__.'/../database/migrations/2022_01_20_000000_create_sites_table.php' => database_path('migrations/2022_01_20_000000_create_sites_table.php'),
+            __DIR__.'/../database/migrations/2022_01_20_100000_create_sliders_table.php' => database_path('migrations/2022_01_20_100000_create_sliders_table.php'),
         ], 'site-migrations');
 
         $this->publishes([

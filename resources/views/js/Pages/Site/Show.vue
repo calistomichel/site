@@ -9,25 +9,46 @@
         <div>
             <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
                 
-                <h1>{{ item.dns }}</h1>
-                <!-- <form-template @submitted="update">
-                    <template #form>
+                <card-template>
+                    <template #card>
                         <div>
-                            <jet-label for="dns" value="DNS" />
+                            <h1>{{ item.dns }}</h1>
+                            <!-- <jet-label for="dns" value="DNS" />
                             <jet-input id="dns" type="text" class="block w-full mt-1" v-model="form.dns" autofocus autocomplete="dns" />
-                            <jet-input-error :message="form.errors.dns" class="mt-2" />
+                            <jet-input-error :message="form.errors.dns" class="mt-2" /> -->
                         </div>
                     </template>
-                    <template #actions>
+                    <!-- <template #actions>
                         <button-secondary :href="route('sites.index')">
                             Cancel
                         </button-secondary>
                         <jet-button class="ml-4">
                             Save
                         </jet-button>
-                    </template>
-                </form-template> -->
+                    </template> -->
+                </card-template>
                 
+                <jet-section-border />
+
+                <card-template>
+                    <template #card>
+                        <div>
+                            <h1>{{ item.dns }}</h1>
+                            <!-- <jet-label for="dns" value="DNS" />
+                            <jet-input id="dns" type="text" class="block w-full mt-1" v-model="form.dns" autofocus autocomplete="dns" />
+                            <jet-input-error :message="form.errors.dns" class="mt-2" /> -->
+                        </div>
+                    </template>
+                    <!-- <template #actions>
+                        <button-secondary :href="route('sites.index')">
+                            Cancel
+                        </button-secondary>
+                        <jet-button class="ml-4">
+                            Save
+                        </jet-button>
+                    </template> -->
+                </card-template>
+
             </div>
         </div>
     </app-layout>
@@ -36,22 +57,26 @@
 <script>
     import { defineComponent } from 'vue'
     import AppLayout from '@/Layouts/AppLayout.vue'
+    import CardTemplate from '@/MichelCalisto/CardTemplate.vue'
     // import FormTemplate from '@/MichelCalisto/FormTemplate.vue'
     // import ButtonSecondary from '@/MichelCalisto/ButtonSecondary.vue'
     // import JetLabel from '@/Jetstream/Label.vue'
     // import JetInput from '@/Jetstream/Input.vue'
     // import JetInputError from '@/Jetstream/InputError.vue'
     // import JetButton from '@/Jetstream/Button.vue'
+    import JetSectionBorder from '@/Jetstream/SectionBorder.vue'
 
     export default defineComponent({
         components: {
             AppLayout,
+            CardTemplate,
             // FormTemplate,
             // ButtonSecondary,
             // JetLabel,
             // JetInput,
             // JetInputError,
             // JetButton,
+            JetSectionBorder,
         },
         props: {
             item: Object,
