@@ -8,6 +8,7 @@ use Inertia\Inertia;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
 use MichelCalisto\Site\Http\Requests\StorePublication;
+use MichelCalisto\Site\Site;
 
 class PublicationController extends Controller
 {

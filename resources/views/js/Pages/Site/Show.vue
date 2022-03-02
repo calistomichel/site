@@ -32,7 +32,7 @@
 
                 <index-template>
                     <template #actions>
-                        <button-primary :href="route('publications.create')">
+                        <button-primary :href="route('publications.create', item)">
                             New Publication
                         </button-primary>
                     </template>
