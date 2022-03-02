@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use MichelCalisto\Site\Http\Controllers\SiteController;
 use MichelCalisto\Site\Http\Controllers\SliderController;
+use MichelCalisto\Site\Http\Controllers\PublicationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,4 @@ use MichelCalisto\Site\Http\Controllers\SliderController;
 
 Route::middleware(['auth:sanctum', 'verified'])->resource('/sites', SiteController::class);
 Route::middleware(['auth:sanctum', 'verified'])->resource('/sliders', SliderController::class);
+Route::middleware(['auth:sanctum', 'verified'])->resource('/sites/{site}/publications', PublicationController::class);

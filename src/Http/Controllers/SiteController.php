@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
 use MichelCalisto\Site\Http\Requests\StoreSite;
 use MichelCalisto\Site\Slider;
+use MichelCalisto\Site\Publication;
 
 class SiteController extends Controller
 {
@@ -58,7 +59,8 @@ class SiteController extends Controller
     public function show(Site $site)
     {
         $sliders = Site::find($site->id)->sliders;
-        return Inertia::render('Site/Show', ['item' => $site, 'sliders' => $sliders]);
+        $publications = Site::find($site->id)->publications;
+        return Inertia::render('Site/Show', ['item' => $site, 'sliders' => $sliders, 'publications' => $publications]);
     }
 
     /**

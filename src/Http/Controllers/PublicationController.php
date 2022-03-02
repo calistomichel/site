@@ -28,9 +28,9 @@ class PublicationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Site $site)
     {
-        return Inertia::render('Site/Create');
+        return Inertia::render('Publication/Create', ['site' => $site]);
     }
 
     /**
@@ -39,10 +39,12 @@ class PublicationController extends Controller
      * @param  \MichelCalisto\Site\Http\Requests\StoreSite $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreSite $request)
+    public function store(StorePublication $request, Site $site)
     {
-        $data = Site::create([
-            'dns' => $request->dns
+        $data = Publication::create([
+            'site_id' => $site->id,
+            'title' => $request->title,
+            'content' => $request->content,
         ]);
 
         return Redirect::route('sites.index');

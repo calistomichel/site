@@ -16,6 +16,7 @@ class Publication extends Model
      * @var string[]
      */
     protected $fillable = [
+        'site_id',
         'title',
         'content'
     ];
