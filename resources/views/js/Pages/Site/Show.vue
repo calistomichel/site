@@ -11,28 +11,36 @@
                 
                 <card-template>
                     <template #card>
-                        <div>
-                            <h1>{{ item.dns }}</h1>
-                            <!-- <jet-label for="dns" value="DNS" />
-                            <jet-input id="dns" type="text" class="block w-full mt-1" v-model="form.dns" autofocus autocomplete="dns" />
-                            <jet-input-error :message="form.errors.dns" class="mt-2" /> -->
-                        </div>
+                        <table class="min-w-full text-center">
+                            <thead class="border-b bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
+                                        DNS
+                                    </th>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        {{ site.dns }}
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
+                                        DNS
+                                    </th>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        {{ site.dns }}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </template>
-                    <!-- <template #actions>
-                        <button-secondary :href="route('sites.index')">
-                            Cancel
-                        </button-secondary>
-                        <jet-button class="ml-4">
-                            Save
-                        </jet-button>
-                    </template> -->
                 </card-template>
                 
                 <jet-section-border />
 
                 <index-template>
                     <template #actions>
-                        <button-primary :href="route('publications.create', item)">
+                        <button-primary :href="route('publications.create', site)">
                             New Publication
                         </button-primary>
                     </template>
@@ -127,7 +135,7 @@
             // JetButton,
         },
         props: {
-            item: Object,
+            site: Object,
             sliders: Object,
             publications: Object,
         },

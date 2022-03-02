@@ -20,9 +20,9 @@ class SiteController extends Controller
      */
     public function index()
     {
-        $items = Site::all();
+        $sites = Site::all();
         $total = Site::count();
-        return Inertia::render('Site/Index', ['items' => $items, 'total' => $total]);
+        return Inertia::render('Site/Index', ['sites' => $sites, 'total' => $total]);
     }
 
     /**
@@ -60,7 +60,7 @@ class SiteController extends Controller
     {
         $sliders = Site::find($site->id)->sliders;
         $publications = Site::find($site->id)->publications;
-        return Inertia::render('Site/Show', ['item' => $site, 'sliders' => $sliders, 'publications' => $publications]);
+        return Inertia::render('Site/Show', ['site' => $site, 'sliders' => $sliders, 'publications' => $publications]);
     }
 
     /**
@@ -71,7 +71,7 @@ class SiteController extends Controller
      */
     public function edit(Site $site)
     {
-        return Inertia::render('Site/Edit', ['item' => $site]);
+        return Inertia::render('Site/Edit', ['site' => $site]);
     }
 
     /**

@@ -53,19 +53,19 @@
             JetButton,
         },
         props: {
-            item: Object,
+            site: Object,
         },
         data() {
             return {
                 form: this.$inertia.form({
                     _method: 'PUT',
-                    dns: this.item.dns,
+                    dns: this.site.dns,
                 })
             }
         },
         methods: {
             update() {
-                this.form.post(route('sites.update', this.item.id), {
+                this.form.post(route('sites.update', this.site), {
                     errorBag: 'update',
                     preserveScroll: true,
                 });
