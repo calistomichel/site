@@ -19,16 +19,16 @@
                         <table class="min-w-full text-center">
                             <thead class="border-b bg-gray-50">
                                 <tr>
-                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
+                                    <th class="text-sm font-medium text-gray-900 px-6 py-4">
                                         DNS
                                     </th>
-                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
+                                    <th class="text-sm font-medium text-gray-900 px-6 py-4">
                                         Show
                                     </th>
-                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
+                                    <th class="text-sm font-medium text-gray-900 px-6 py-4">
                                         Edit
                                     </th>
-                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
+                                    <th class="text-sm font-medium text-gray-900 px-6 py-4">
                                         Delete
                                     </th>
                                 </tr>

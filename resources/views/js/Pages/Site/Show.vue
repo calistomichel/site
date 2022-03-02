@@ -12,22 +12,12 @@
                 <card-template>
                     <template #card>
                         <table class="min-w-full text-center">
-                            <thead class="border-b bg-gray-50">
-                                <tr>
-                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
-                                        DNS
-                                    </th>
-                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                        {{ site.dns }}
-                                    </td>
-                                </tr>
-                            </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
+                                <tr class="border-b">
+                                    <th class="border-r bg-gray-50 text-sm font-medium text-gray-900 px-6 py-4">
                                         DNS
                                     </th>
-                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    <td class="text-sm font-light text-gray-900 px-6 py-4 whitespace-nowrap">
                                         {{ site.dns }}
                                     </td>
                                 </tr>

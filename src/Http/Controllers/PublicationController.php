@@ -13,20 +13,9 @@ use MichelCalisto\Site\Site;
 class PublicationController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $items = Site::all();
-        $total = Site::count();
-        return Inertia::render('Site/Index', ['items' => $items, 'total' => $total]);
-    }
-
-    /**
      * Show the form for creating a new resource.
      *
+     * @param  \MichelCalisto\Site\Site  $site
      * @return \Illuminate\Http\Response
      */
     public function create(Site $site)
@@ -37,7 +26,8 @@ class PublicationController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \MichelCalisto\Site\Http\Requests\StoreSite $request
+     * @param  \MichelCalisto\Site\Http\Requests\StorePublication $request
+     * @param  \MichelCalisto\Site\Site  $site
      * @return \Illuminate\Http\Response
      */
     public function store(StorePublication $request, Site $site)
@@ -48,7 +38,7 @@ class PublicationController extends Controller
             'content' => $request->content,
         ]);
 
-        return Redirect::route('sites.index');
+        return Redirect::route('sites.show', $site);
     }
 
     /**
@@ -57,10 +47,9 @@ class PublicationController extends Controller
      * @param  \MichelCalisto\Site\Site  $site
      * @return \Illuminate\Http\Response
      */
-    public function show(Site $site)
+    public function show(Publication $publication, Site $site)
     {
-        $sliders = Site::find($site->id)->sliders;
-        return Inertia::render('Site/Show', ['item' => $site, 'sliders' => $sliders]);
+        return Inertia::render('Publication/Show', ['publication' => $publication]);
     }
 
     /**
