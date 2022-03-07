@@ -49,15 +49,15 @@
                                     <th class="text-sm font-medium text-gray-900 px-6 py-4">
                                         Content
                                     </th>
-                                    <!-- <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
+                                    <th class="text-sm font-medium text-gray-900 px-6 py-4">
                                         Show
                                     </th>
-                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
+                                    <th class="text-sm font-medium text-gray-900 px-6 py-4">
                                         Edit
                                     </th>
-                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
+                                    <th class="text-sm font-medium text-gray-900 px-6 py-4">
                                         Delete
-                                    </th> -->
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -67,6 +67,11 @@
                                     </td>
                                     <td class="text-sm font-light text-gray-900 px-6 py-4">
                                         {{ publication.content }}
+                                    </td>
+                                    <td class="text-sm font-light text-gray-900 px-6 py-4">
+                                        <link-default :href="route('publications.show', site)">
+                                            <icon-show />
+                                        </link-default>
                                     </td>
                                     <!-- <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                         <link-default :href="route('sites.show', item.id)">
@@ -108,6 +113,9 @@
     import IndexTemplate from '@/MichelCalisto/IndexTemplate.vue'
     import ButtonPrimary from '@/MichelCalisto/ButtonPrimary.vue'
     import ButtonSecondary from '@/MichelCalisto/ButtonSecondary.vue'
+    import IconShow from '@/MichelCalisto/IconShow.vue'
+    import IconEdit from '@/MichelCalisto/IconEdit.vue'
+    import IconDestroy from '@/MichelCalisto/IconDestroy.vue'
     import JetSectionBorder from '@/Jetstream/SectionBorder.vue'
     // import JetLabel from '@/Jetstream/Label.vue'
     // import JetInput from '@/Jetstream/Input.vue'
@@ -121,6 +129,9 @@
             IndexTemplate,
             ButtonPrimary,
             ButtonSecondary,
+            IconShow,
+            IconEdit,
+            IconDestroy,
             JetSectionBorder,
             // JetLabel,
             // JetInput,

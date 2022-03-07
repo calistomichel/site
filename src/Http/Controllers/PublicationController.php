@@ -44,12 +44,13 @@ class PublicationController extends Controller
     /**
      * Display the specified resource.
      *
+     * @param  \MichelCalisto\Site\Publication  $publication
      * @param  \MichelCalisto\Site\Site  $site
      * @return \Illuminate\Http\Response
      */
     public function show(Publication $publication, Site $site)
     {
-        return Inertia::render('Publication/Show', ['publication' => $publication]);
+        return Inertia::render('Publication/Show', ['publication' => $publication, 'site' => $site]);
     }
 
     /**
