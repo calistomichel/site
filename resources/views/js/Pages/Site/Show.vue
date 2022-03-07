@@ -17,12 +17,17 @@
                                     <th class="border-r bg-gray-50 text-sm font-medium text-gray-900 px-6 py-4">
                                         DNS
                                     </th>
-                                    <td class="text-sm font-light text-gray-900 px-6 py-4 whitespace-nowrap">
+                                    <td class="text-sm font-light text-gray-900 px-6 py-4">
                                         {{ site.dns }}
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
+                    </template>
+                    <template #actions>
+                        <button-secondary :href="route('sites.show', site)">
+                            Cancel
+                        </button-secondary>
                     </template>
                 </card-template>
                 
@@ -57,10 +62,10 @@
                             </thead>
                             <tbody>
                                 <tr class="bg-white border-b" v-for="publication in publications" :key="publication.id">
-                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    <td class="text-sm font-light text-gray-900 px-6 py-4">
                                         {{ publication.title }}
                                     </td>
-                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    <td class="text-sm font-light text-gray-900 px-6 py-4">
                                         {{ publication.content }}
                                     </td>
                                     <!-- <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
