@@ -25,7 +25,7 @@
                         </table>
                     </template>
                     <template #actions>
-                        <button-secondary :href="route('sites.show', site)">
+                        <button-secondary :href="route('sites.index')">
                             Cancel
                         </button-secondary>
                     </template>
@@ -105,31 +105,27 @@
     import { defineComponent } from 'vue'
     import AppLayout from '@/Layouts/AppLayout.vue'
     import CardTemplate from '@/MichelCalisto/CardTemplate.vue'
-    import JetSectionBorder from '@/Jetstream/SectionBorder.vue'
     import IndexTemplate from '@/MichelCalisto/IndexTemplate.vue'
     import ButtonPrimary from '@/MichelCalisto/ButtonPrimary.vue'
-    // import FormTemplate from '@/MichelCalisto/FormTemplate.vue'
-    // import ButtonSecondary from '@/MichelCalisto/ButtonSecondary.vue'
+    import ButtonSecondary from '@/MichelCalisto/ButtonSecondary.vue'
+    import JetSectionBorder from '@/Jetstream/SectionBorder.vue'
     // import JetLabel from '@/Jetstream/Label.vue'
     // import JetInput from '@/Jetstream/Input.vue'
     // import JetInputError from '@/Jetstream/InputError.vue'
     // import JetButton from '@/Jetstream/Button.vue'
-    import JetSecondaryButton from '@/Jetstream/SecondaryButton.vue'
 
     export default defineComponent({
         components: {
             AppLayout,
             CardTemplate,
-            JetSectionBorder,
             IndexTemplate,
             ButtonPrimary,
-            // FormTemplate,
-            // ButtonSecondary,
+            ButtonSecondary,
+            JetSectionBorder,
             // JetLabel,
             // JetInput,
             // JetInputError,
             // JetButton,
-            JetSecondaryButton,
         },
         props: {
             site: Object,
