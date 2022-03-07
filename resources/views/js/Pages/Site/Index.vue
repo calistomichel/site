@@ -35,20 +35,20 @@
                             </thead>
                             <tbody>
                                 <tr class="bg-white border-b" v-for="site in sites" :key="site.id">
-                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    <td class="text-sm font-light text-gray-900 px-6 py-4">
                                         {{ site.dns }}
                                     </td>
-                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    <td class="text-sm font-light text-gray-900 px-6 py-4">
                                         <link-default :href="route('sites.show', site)">
                                             <icon-show />
                                         </link-default>
                                     </td>
-                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    <td class="text-sm font-light text-gray-900 px-6 py-4">
                                         <link-default :href="route('sites.edit', site)">
-                                        <icon-edit />
+                                            <icon-edit />
                                         </link-default>
                                     </td>
-                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    <td class="text-sm font-light text-gray-900 px-6 py-4">
                                         <link-default @click="confirmDeletion(site)" as="button">
                                             <icon-destroy />
                                         </link-default>
@@ -89,12 +89,12 @@
     import IndexTemplate from '@/MichelCalisto/IndexTemplate.vue'
     import ButtonPrimary from '@/MichelCalisto/ButtonPrimary.vue'
     import LinkDefault from '@/MichelCalisto/LinkDefault.vue'
-    import JetDialogModal from '@/Jetstream/DialogModal.vue'
-    import JetDangerButton from '@/Jetstream/DangerButton.vue'
-    import JetSecondaryButton from '@/Jetstream/SecondaryButton.vue'
     import IconShow from '@/MichelCalisto/IconShow.vue'
     import IconEdit from '@/MichelCalisto/IconEdit.vue'
     import IconDestroy from '@/MichelCalisto/IconDestroy.vue'
+    import JetDialogModal from '@/Jetstream/DialogModal.vue'
+    import JetDangerButton from '@/Jetstream/DangerButton.vue'
+    import JetSecondaryButton from '@/Jetstream/SecondaryButton.vue'
     
     export default defineComponent({
         components: {
@@ -102,12 +102,12 @@
             IndexTemplate,
             ButtonPrimary,
             LinkDefault,
-            JetDialogModal,
-            JetDangerButton,
-            JetSecondaryButton,
             IconShow,
             IconEdit,
             IconDestroy,
+            JetDialogModal,
+            JetDangerButton,
+            JetSecondaryButton,
         },
         props: {
             sites: Array,
