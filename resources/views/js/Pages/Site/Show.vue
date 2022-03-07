@@ -114,6 +114,7 @@
     // import JetInput from '@/Jetstream/Input.vue'
     // import JetInputError from '@/Jetstream/InputError.vue'
     // import JetButton from '@/Jetstream/Button.vue'
+    import JetSecondaryButton from '@/Jetstream/SecondaryButton.vue'
 
     export default defineComponent({
         components: {
@@ -128,6 +129,7 @@
             // JetInput,
             // JetInputError,
             // JetButton,
+            JetSecondaryButton,
         },
         props: {
             site: Object,
