@@ -14,7 +14,7 @@
                         <div>
                             <jet-label for="title" value="Title" />
                             <jet-input id="title" type="text" class="block w-full mt-1" v-model="form.title" autofocus autocomplete="title" />
-                            <jet-input-error :message="form.errors.dns" class="mt-2" />
+                            <jet-input-error :message="form.errors.title" class="mt-2" />
                         </div>
                         <div>
                             <jet-label for="content" value="Content" />
@@ -23,9 +23,9 @@
                         </div>
                     </template>
                     <template #actions>
-                        <!-- <button-secondary :href="route('sites.index')">
+                        <button-secondary :href="route('sites.show', site)">
                             Cancel
-                        </button-secondary> -->
+                        </button-secondary>
                         <jet-button class="ml-4">
                             Save
                         </jet-button>
@@ -42,22 +42,22 @@
     import AppLayout from '@/Layouts/AppLayout.vue'
     import FormTemplate from '@/MichelCalisto/FormTemplate.vue'
     import ButtonSecondary from '@/MichelCalisto/ButtonSecondary.vue'
+    import Textarea from '@/MichelCalisto/Textarea.vue'
     import JetLabel from '@/Jetstream/Label.vue'
     import JetInput from '@/Jetstream/Input.vue'
     import JetInputError from '@/Jetstream/InputError.vue'
     import JetButton from '@/Jetstream/Button.vue'
-    import Textarea from '@/MichelCalisto/Textarea.vue'
 
     export default defineComponent({
         components: {
             AppLayout,
             FormTemplate,
             ButtonSecondary,
+            Textarea,
             JetLabel,
             JetInput,
             JetInputError,
             JetButton,
-            Textarea,
         },
         props: {
             site: Object,
