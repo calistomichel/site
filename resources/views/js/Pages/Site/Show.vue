@@ -38,10 +38,10 @@
                         <table class="min-w-full text-center">
                             <thead class="border-b bg-gray-50">
                                 <tr>
-                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
+                                    <th class="text-sm font-medium text-gray-900 px-6 py-4">
                                         Title
                                     </th>
-                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
+                                    <th class="text-sm font-medium text-gray-900 px-6 py-4">
                                         Content
                                     </th>
                                     <!-- <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
