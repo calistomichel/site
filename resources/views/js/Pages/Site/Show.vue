@@ -69,7 +69,7 @@
                                         {{ publication.content }}
                                     </td>
                                     <td class="text-sm font-light text-gray-900 px-6 py-4">
-                                        <link-default :href="route('publications.show', site)">
+                                        <link-default :href="route('publications.show', [site, publication])">
                                             <icon-show />
                                         </link-default>
                                     </td>
@@ -113,6 +113,7 @@
     import IndexTemplate from '@/MichelCalisto/IndexTemplate.vue'
     import ButtonPrimary from '@/MichelCalisto/ButtonPrimary.vue'
     import ButtonSecondary from '@/MichelCalisto/ButtonSecondary.vue'
+    import LinkDefault from '@/MichelCalisto/LinkDefault.vue'
     import IconShow from '@/MichelCalisto/IconShow.vue'
     import IconEdit from '@/MichelCalisto/IconEdit.vue'
     import IconDestroy from '@/MichelCalisto/IconDestroy.vue'
@@ -129,6 +130,7 @@
             IndexTemplate,
             ButtonPrimary,
             ButtonSecondary,
+            LinkDefault,
             IconShow,
             IconEdit,
             IconDestroy,
@@ -143,14 +145,14 @@
             sliders: Object,
             publications: Object,
         },
-        data() {
+        // data() {
             // return {
             //     form: this.$inertia.form({
             //         _method: 'PUT',
             //         dns: this.item.dns,
             //     })
             // }
-        },
+        // },
         methods: {
             // update() {
             //     this.form.post(route('sites.update', this.item.id), {
