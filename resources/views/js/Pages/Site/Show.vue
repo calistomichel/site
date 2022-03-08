@@ -73,14 +73,12 @@
                                             <icon-show />
                                         </link-default>
                                     </td>
-                                    <!-- <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                        <link-default :href="route('sites.show', item.id)">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                            </svg>
+                                    <td class="text-sm font-light text-gray-900 px-6 py-4">
+                                        <link-default @click="confirmDeletion(publication)" as="button">
+                                            <icon-destroy />
                                         </link-default>
                                     </td>
+                                    <!-- 
                                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                         <link-default :href="route('sites.edit', item.id)">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -103,6 +101,25 @@
 
             </div>
         </div>
+
+        <jet-dialog-modal :show="confirmingDeletion" @close="closeModal">
+            <template #title>
+                Delete Publication
+            </template>
+
+            <template #content>
+                Are you sure you want to delete this publication? Once the site is removed, it will be removed permanently.
+            </template>
+
+            <template #footer>
+                <jet-secondary-button @click="closeModal">
+                    Cancel
+                </jet-secondary-button>
+                <jet-danger-button class="ml-2" @click="destroy">
+                    Delete
+                </jet-danger-button>
+            </template>
+        </jet-dialog-modal>
     </app-layout>
 </template>
 
@@ -122,6 +139,9 @@
     // import JetInput from '@/Jetstream/Input.vue'
     // import JetInputError from '@/Jetstream/InputError.vue'
     // import JetButton from '@/Jetstream/Button.vue'
+    import JetDialogModal from '@/Jetstream/DialogModal.vue'
+    import JetDangerButton from '@/Jetstream/DangerButton.vue'
+    import JetSecondaryButton from '@/Jetstream/SecondaryButton.vue'
 
     export default defineComponent({
         components: {
@@ -139,27 +159,37 @@
             // JetInput,
             // JetInputError,
             // JetButton,
+            JetDialogModal,
+            JetDangerButton,
+            JetSecondaryButton,
         },
         props: {
             site: Object,
             sliders: Object,
             publications: Object,
         },
-        // data() {
-            // return {
-            //     form: this.$inertia.form({
-            //         _method: 'PUT',
-            //         dns: this.item.dns,
-            //     })
-            // }
-        // },
+        data() {
+            return {
+                confirmingDeletion: false,
+                id: null,
+            }
+        },
         methods: {
-            // update() {
-            //     this.form.post(route('sites.update', this.item.id), {
-            //         errorBag: 'update',
-            //         preserveScroll: true,
-            //     });
-            // }
+            confirmDeletion(id) {
+                this.confirmingDeletion = true;
+                this.id = id;
+            },
+            destroy() {
+                if (this.id !== null) {
+                    this.$inertia.delete(this.route('publications.destroy', [this.site, this.id]), {
+                        onSuccess: () => this.closeModal(),
+                    })
+                }
+            },
+            closeModal() {
+                this.confirmingDeletion = false;
+                this.id = null;
+            },
         }
     })
 </script>

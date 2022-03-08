@@ -88,11 +88,12 @@ class PublicationController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \MichelCalisto\Site\Site  $site
+     * @param  \MichelCalisto\Site\Publication  $publication
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Site $site)
+    public function destroy(Site $site, Publication $publication)
     {
-        $site->delete();
-        return Redirect::route('sites.index');
+        $publication->delete();
+        return Redirect::route('sites.show', $site);
     }
 }
