@@ -57,11 +57,12 @@ class PublicationController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \MichelCalisto\Site\Site  $site
+     * @param  \MichelCalisto\Site\Publication  $publication
      * @return \Illuminate\Http\Response
      */
-    public function edit(Site $site)
+    public function edit(Site $site, Publication $publication)
     {
-        return Inertia::render('Site/Edit', ['item' => $site]);
+        return Inertia::render('Publication/Edit', ['site' => $site, 'publication' => $publication]);
     }
 
     /**
@@ -69,19 +70,22 @@ class PublicationController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \MichelCalisto\Site\Site  $site
+     * @param  \MichelCalisto\Site\Publication  $publication
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Site $site)
+    public function update(Request $request, Site $site, Publication $publication)
     {
         $request->validate([
-            'dns' => 'required|unique:sites,dns,'.$site->id.'|min:3|max:50',
+            'title' => 'required|unique:publications,title,'.$publication->id.'|min:3|max:100',
+            'content' => 'required|min:3|max:300',
         ]);
 
-        $site->update([
-            'dns' => $request->dns,
+        $publication->update([
+            'title' => $request->title,
+            'content' => $request->content,
         ]);
 
-        return Redirect::route('sites.index');
+        return Redirect::route('sites.show', $site);
     }
 
     /**

@@ -57,8 +57,8 @@
             ButtonSecondary,
         },
         props: {
-            publication: Object,
             site: Object,
+            publication: Object,
         }
     })
 </script>
