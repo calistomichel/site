@@ -16,10 +16,8 @@
                     </div>
                     <div>
                         <jet-label for="file" value="File" />
-                        <jet-input id="file" type="file" class="block w-full mt-1" @input="form.path = $event.target.files[0]" @change="imagePreview" />
-                        <jet-input-error :message="form.errors.path" class="mt-2" />
-                        <!-- <input type="file" @input="form.image = $event.target.files[0]" @change="imagePreview" />
-                        <div v-if="errors.image" class="font-bold text-red-600"> {{ errors.image }} </div> -->
+                        <jet-input id="file" type="file" class="block w-full mt-1" @input="form.image_file = $event.target.files[0]" @change="imagePreview" />
+                        <jet-input-error :message="form.errors.image_file" class="mt-2" />
                     </div>
                     <img v-if="url_preview" :src="url_preview" class="w-full mt-4" />
                 </template>
@@ -65,8 +63,9 @@
             return {
                 form: this.$inertia.form({
                     name: '',
-                    path: '',
-                })
+                    image_file: '',
+                }),
+                url_preview: null,
             }
         },
         methods: {
@@ -75,7 +74,11 @@
                     errorBag: 'create',
                     preserveScroll: true
                 });
-            }
+            },
+            imagePreview(e) {
+                const file = e.target.files[0];
+                this.url_preview = URL.createObjectURL(file);
+            },
         }
     })
 </script>

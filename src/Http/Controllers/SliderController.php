@@ -27,22 +27,24 @@ class SliderController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \MichelCalisto\Site\Http\Requests\StoreSite $request
+     * @param  \MichelCalisto\Site\Site  $site
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreSlider $request)
+    public function store(StoreSlider $request, Site $site)
     {
         $image_path = '';
 
-        if ($request->hasFile('slider')) {
-            $image_path = $request->file('slider')->store('sliders', 'public');
+        if ($request->hasFile('image_file')) {
+            $image_path = $request->file('image_file')->store('sliders', 'public');
         }
 
-        $data = SLider::create([
+        $data = Slider::create([
+            'site_id' => $site->id,
             'name' => $request->name,
             'path' => $image_path,
         ]);
 
-        return Redirect::route('sliders.index');
+        return Redirect::route('sites.show', $site);
     }
 
     /**
