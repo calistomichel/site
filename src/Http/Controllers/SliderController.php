@@ -8,35 +8,19 @@ use Inertia\Inertia;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
 use MichelCalisto\Site\Http\Requests\StoreSlider;
+use MichelCalisto\Site\Site;
 
 class SliderController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $items = Slider::all();
-        $total = Slider::count();
-        return Inertia::render('Slider/Index', ['items' => $items, 'total' => $total]);
-    }
-
-    /**
      * Show the form for creating a new resource.
      *
+     * @param  \MichelCalisto\Site\Site  $site
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Site $site)
     {
-        $total = Slider::count();
-
-        if ($total < 5) {
-            return Inertia::render('SLider/Create');
-        } else {
-            abort(404);
-        }
+        return Inertia::render('Slider/Create', ['site' => $site]);
     }
 
     /**

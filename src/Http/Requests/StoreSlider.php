@@ -24,8 +24,8 @@ class StoreSlider extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:sliders|min:3|max:50',
-            'image' => 'required|slider|mimes:jpeg,jpg,png,gif,svg|max:2048',
+            'name' => 'required|min:3|max:50',
+            'image' => 'required|image|mimes:jpeg,jpg,png,gif,svg|max:2048',
         ];
     }
 }

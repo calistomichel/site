@@ -17,5 +17,5 @@ use MichelCalisto\Site\Http\Controllers\PublicationController;
 */
 
 Route::middleware(['auth:sanctum', 'verified'])->resource('/sites', SiteController::class);
-Route::middleware(['auth:sanctum', 'verified'])->resource('/sliders', SliderController::class);
+Route::middleware(['auth:sanctum', 'verified'])->resource('/sites/{site}/sliders', SliderController::class);
 Route::middleware(['auth:sanctum', 'verified'])->resource('/sites/{site}/publications', PublicationController::class);
