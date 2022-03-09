@@ -6,28 +6,24 @@
             </h2>
         </template>
 
-        <div>
-            <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-                
-                <form-template @submitted="update">
-                    <template #form>
-                        <div>
-                            <jet-label for="dns" value="DNS" />
-                            <jet-input id="dns" type="text" class="block w-full mt-1" v-model="form.dns" autofocus autocomplete="dns" />
-                            <jet-input-error :message="form.errors.dns" class="mt-2" />
-                        </div>
-                    </template>
-                    <template #actions>
-                        <button-secondary :href="route('sites.index')">
-                            Cancel
-                        </button-secondary>
-                        <jet-button class="ml-4">
-                            Save
-                        </jet-button>
-                    </template>
-                </form-template>
-                
-            </div>
+        <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+            <form-template @submitted="update">
+                <template #form>
+                    <div>
+                        <jet-label for="dns" value="DNS" />
+                        <jet-input id="dns" type="text" class="block w-full mt-1" v-model="form.dns" autofocus autocomplete="dns" />
+                        <jet-input-error :message="form.errors.dns" class="mt-2" />
+                    </div>
+                </template>
+                <template #actions>
+                    <button-secondary :href="route('sites.index')">
+                        Cancel
+                    </button-secondary>
+                    <jet-button class="ml-4">
+                        Save
+                    </jet-button>
+                </template>
+            </form-template>
         </div>
     </app-layout>
 </template>

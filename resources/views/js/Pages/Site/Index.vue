@@ -6,60 +6,56 @@
             </h2>
         </template>
 
-        <div>
-            <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-                
-                <index-template>
-                    <template #actions>
-                        <button-primary :href="route('sites.create')">
-                            New Site
-                        </button-primary>
-                    </template>
-                    <template #content>
-                        <table class="min-w-full text-center">
-                            <thead class="border-b bg-gray-50">
-                                <tr>
-                                    <th class="text-sm font-medium text-gray-900 px-6 py-4">
-                                        DNS
-                                    </th>
-                                    <th class="text-sm font-medium text-gray-900 px-6 py-4">
-                                        Show
-                                    </th>
-                                    <th class="text-sm font-medium text-gray-900 px-6 py-4">
-                                        Edit
-                                    </th>
-                                    <th class="text-sm font-medium text-gray-900 px-6 py-4">
-                                        Delete
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="bg-white border-b" v-for="site in sites" :key="site.id">
-                                    <td class="text-sm font-light text-gray-900 px-6 py-4">
-                                        {{ site.dns }}
-                                    </td>
-                                    <td class="text-sm font-light text-gray-900 px-6 py-4">
-                                        <link-default :href="route('sites.show', site)">
-                                            <icon-show />
-                                        </link-default>
-                                    </td>
-                                    <td class="text-sm font-light text-gray-900 px-6 py-4">
-                                        <link-default :href="route('sites.edit', site)">
-                                            <icon-edit />
-                                        </link-default>
-                                    </td>
-                                    <td class="text-sm font-light text-gray-900 px-6 py-4">
-                                        <link-default @click="confirmDeletion(site)" as="button">
-                                            <icon-destroy />
-                                        </link-default>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </template>
-                </index-template>
-
-            </div>
+        <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+            <index-template>
+                <template #actions>
+                    <button-primary :href="route('sites.create')">
+                        New Site
+                    </button-primary>
+                </template>
+                <template #content>
+                    <table class="min-w-full text-center">
+                        <thead class="border-b bg-gray-50">
+                            <tr>
+                                <th class="text-sm font-medium text-gray-900 px-6 py-4">
+                                    DNS
+                                </th>
+                                <th class="text-sm font-medium text-gray-900 px-6 py-4">
+                                    Show
+                                </th>
+                                <th class="text-sm font-medium text-gray-900 px-6 py-4">
+                                    Edit
+                                </th>
+                                <th class="text-sm font-medium text-gray-900 px-6 py-4">
+                                    Delete
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-white border-b" v-for="site in sites" :key="site.id">
+                                <td class="text-sm font-light text-gray-900 px-6 py-4">
+                                    {{ site.dns }}
+                                </td>
+                                <td class="text-sm font-light text-gray-900 px-6 py-4">
+                                    <link-default :href="route('sites.show', site)">
+                                        <icon-show />
+                                    </link-default>
+                                </td>
+                                <td class="text-sm font-light text-gray-900 px-6 py-4">
+                                    <link-default :href="route('sites.edit', site)">
+                                        <icon-edit />
+                                    </link-default>
+                                </td>
+                                <td class="text-sm font-light text-gray-900 px-6 py-4">
+                                    <link-default @click="confirmDeletion(site)" as="button">
+                                        <icon-destroy />
+                                    </link-default>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </template>
+            </index-template>
         </div>
 
         <jet-dialog-modal :show="confirmingDeletion" @close="closeModal">

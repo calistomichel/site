@@ -6,33 +6,29 @@
             </h2>
         </template>
 
-        <div>
-            <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-
-                <form-template @submitted="create">
-                    <template #form>
-                        <div>
-                            <jet-label for="title" value="Title" />
-                            <jet-input id="title" type="text" class="block w-full mt-1" v-model="form.title" autofocus autocomplete="title" />
-                            <jet-input-error :message="form.errors.title" class="mt-2" />
-                        </div>
-                        <div>
-                            <jet-label for="content" value="Content" />
-                            <textarea id="content" type="textarea" class="mt-1 block w-full h-40" v-model="form.content" autocomplete="content" />
-                            <jet-input-error :message="form.errors.content" class="mt-2" />
-                        </div>
-                    </template>
-                    <template #actions>
-                        <button-secondary :href="route('sites.show', site)">
-                            Cancel
-                        </button-secondary>
-                        <jet-button class="ml-4">
-                            Save
-                        </jet-button>
-                    </template>
-                </form-template>
-
-            </div>
+        <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+            <form-template @submitted="create">
+                <template #form>
+                    <div>
+                        <jet-label for="title" value="Title" />
+                        <jet-input id="title" type="text" class="block w-full mt-1" v-model="form.title" autofocus autocomplete="title" />
+                        <jet-input-error :message="form.errors.title" class="mt-2" />
+                    </div>
+                    <div>
+                        <jet-label for="content" value="Content" />
+                        <textarea id="content" type="textarea" class="mt-1 block w-full h-40" v-model="form.content" autocomplete="content" />
+                        <jet-input-error :message="form.errors.content" class="mt-2" />
+                    </div>
+                </template>
+                <template #actions>
+                    <button-secondary :href="route('sites.show', site)">
+                        Cancel
+                    </button-secondary>
+                    <jet-button class="ml-4">
+                        Save
+                    </jet-button>
+                </template>
+            </form-template>
         </div>
     </app-layout>
 </template>

@@ -76,7 +76,7 @@ class PublicationController extends Controller
     public function update(Request $request, Site $site, Publication $publication)
     {
         $request->validate([
-            'title' => 'required|unique:publications,title,'.$publication->id.'|min:3|max:100',
+            'title' => 'required|min:3|max:100',
             'content' => 'required|min:3|max:300',
         ]);
 

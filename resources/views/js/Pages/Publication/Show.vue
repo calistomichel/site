@@ -6,40 +6,36 @@
             </h2>
         </template>
 
-        <div>
-            <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-                
-                <card-template>
-                    <template #card>
-                        <table class="min-w-full text-center">
-                            <tbody>
-                                <tr class="border-b">
-                                    <th class="border-r bg-gray-50 text-sm font-medium text-gray-900 px-6 py-4">
-                                        Title
-                                    </th>
-                                    <td class="text-sm font-light text-gray-900 px-6 py-4">
-                                        {{ publication.title }}
-                                    </td>
-                                </tr>
-                                <tr class="border-b">
-                                    <th class="border-r bg-gray-50 text-sm font-medium text-gray-900 px-6 py-4">
-                                        Content
-                                    </th>
-                                    <td class="text-sm font-light text-gray-900 px-6 py-4">
-                                        {{ publication.content }}
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </template>
-                    <template #actions>
-                        <button-secondary :href="route('sites.show', site)">
-                            Cancel
-                        </button-secondary>
-                    </template>
-                </card-template>
-                
-            </div>
+        <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+            <card-template>
+                <template #card>
+                    <table class="min-w-full text-center">
+                        <tbody>
+                            <tr class="border-b">
+                                <th class="border-r bg-gray-50 text-sm font-medium text-gray-900 px-6 py-4">
+                                    Title
+                                </th>
+                                <td class="text-sm font-light text-gray-900 px-6 py-4">
+                                    {{ publication.title }}
+                                </td>
+                            </tr>
+                            <tr class="border-b">
+                                <th class="border-r bg-gray-50 text-sm font-medium text-gray-900 px-6 py-4">
+                                    Content
+                                </th>
+                                <td class="text-sm font-light text-gray-900 px-6 py-4">
+                                    {{ publication.content }}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </template>
+                <template #actions>
+                    <button-secondary :href="route('sites.show', site)">
+                        Cancel
+                    </button-secondary>
+                </template>
+            </card-template>
         </div>
     </app-layout>
 </template>

@@ -24,7 +24,7 @@ class StorePublication extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|unique:publications|min:3|max:100',
+            'title' => 'required|min:3|max:100',
             'content' => 'required|min:3|max:300',
         ];
     }
