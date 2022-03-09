@@ -48,6 +48,18 @@ class SliderController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  \MichelCalisto\Site\Site  $site
+     * @param  \MichelCalisto\Site\Slider  $slider
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Site $site, Slider $slider)
+    {
+        return Inertia::render('Slider/Show', ['site' => $site, 'slider' => $slider]);
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  \MichelCalisto\Site\Site  $site

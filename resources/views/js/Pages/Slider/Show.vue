@@ -1,0 +1,60 @@
+<template>
+    <app-layout title="Show Slider">
+        <template #header>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                Show Slider
+            </h2>
+        </template>
+
+        <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+            <card-template>
+                <template #card>
+                    <table class="min-w-full text-center">
+                        <tbody>
+                            <tr class="border-b">
+                                <th class="border-r bg-gray-50 text-sm font-medium text-gray-900 px-6 py-4">
+                                    Name
+                                </th>
+                                <td class="text-sm font-light text-gray-900 px-6 py-4">
+                                    {{ slider.name }}
+                                </td>
+                            </tr>
+                            <tr class="border-b">
+                                <th class="border-r bg-gray-50 text-sm font-medium text-gray-900 px-6 py-4">
+                                    Preview
+                                </th>
+                                <td class="text-sm font-light text-gray-900 px-6 py-4">
+                                    <img :src="'/storage/' + slider.path" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </template>
+                <template #actions>
+                    <button-secondary :href="route('sites.show', site)">
+                        Cancel
+                    </button-secondary>
+                </template>
+            </card-template>
+        </div>
+    </app-layout>
+</template>
+
+<script>
+    import { defineComponent } from 'vue'
+    import AppLayout from '@/Layouts/AppLayout.vue'
+    import CardTemplate from '@/MichelCalisto/CardTemplate.vue'
+    import ButtonSecondary from '@/MichelCalisto/ButtonSecondary.vue'
+
+    export default defineComponent({
+        components: {
+            AppLayout,
+            CardTemplate,
+            ButtonSecondary,
+        },
+        props: {
+            site: Object,
+            slider: Object,
+        }
+    })
+</script>

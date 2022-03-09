@@ -38,14 +38,11 @@
                     </button-primary>
                 </template>
                 <template #content>
-                    <!-- <table class="min-w-full text-center">
+                    <table class="min-w-full text-center">
                         <thead class="border-b bg-gray-50">
                             <tr>
                                 <th class="text-sm font-medium text-gray-900 px-6 py-4">
-                                    Title
-                                </th>
-                                <th class="text-sm font-medium text-gray-900 px-6 py-4">
-                                    Content
+                                    Name
                                 </th>
                                 <th class="text-sm font-medium text-gray-900 px-6 py-4">
                                     Show
@@ -59,19 +56,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="bg-white border-b" v-for="publication in publications" :key="publication.id">
+                            <tr class="bg-white border-b" v-for="slider in sliders" :key="slider.id">
                                 <td class="text-sm font-light text-gray-900 px-6 py-4">
-                                    {{ publication.title }}
+                                    {{ slider.name }}
                                 </td>
                                 <td class="text-sm font-light text-gray-900 px-6 py-4">
-                                    {{ publication.content }}
-                                </td>
-                                <td class="text-sm font-light text-gray-900 px-6 py-4">
-                                    <link-default :href="route('publications.show', [site, publication])">
+                                    <link-default :href="route('sliders.show', [site, slider])">
                                         <icon-show />
                                     </link-default>
                                 </td>
-                                <td class="text-sm font-light text-gray-900 px-6 py-4">
+                                <!-- <td class="text-sm font-light text-gray-900 px-6 py-4">
                                     <link-default :href="route('publications.edit', [site, publication])">
                                         <icon-edit />
                                     </link-default>
@@ -80,10 +74,10 @@
                                     <link-default @click="confirmDeletion(publication)" as="button">
                                         <icon-destroy />
                                     </link-default>
-                                </td>
+                                </td> -->
                             </tr>
                         </tbody>
-                    </table> -->
+                    </table>
                 </template>
             </index-template>
 
