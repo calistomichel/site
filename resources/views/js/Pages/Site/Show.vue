@@ -65,12 +65,12 @@
                                         <icon-show />
                                     </link-default>
                                 </td>
-                                <!-- <td class="text-sm font-light text-gray-900 px-6 py-4">
-                                    <link-default :href="route('publications.edit', [site, publication])">
+                                <td class="text-sm font-light text-gray-900 px-6 py-4">
+                                    <link-default :href="route('sliders.edit', [site, slider])">
                                         <icon-edit />
                                     </link-default>
                                 </td>
-                                <td class="text-sm font-light text-gray-900 px-6 py-4">
+                                <!-- <td class="text-sm font-light text-gray-900 px-6 py-4">
                                     <link-default @click="confirmDeletion(publication)" as="button">
                                         <icon-destroy />
                                     </link-default>

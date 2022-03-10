@@ -1,13 +1,13 @@
 <template>
-    <app-layout title="Create Slider">
+    <app-layout title="Edit Slider">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Create Slider
+                Edit Slider
             </h2>
         </template>
 
         <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-            <form-template @submitted="create">
+            <form-template @submitted="update">
                 <template #form>
                     <div>
                         <jet-label for="name" value="Name" />
@@ -56,21 +56,23 @@
         },
         props: {
             site: Object,
+            slider: Object,
         },
         data() {
             return {
                 form: this.$inertia.form({
-                    name: '',
-                    image_file: '',
+                    _method: 'PUT',
+                    name: this.slider.name,
+                    image_file: this.slider.path,
                 }),
-                url_preview: null,
+                url_preview: '/storage/' + this.slider.path,
             }
         },
         methods: {
-            create() {
-                this.form.post(route('sliders.store', this.site), {
-                    errorBag: 'create',
-                    preserveScroll: true
+            update() {
+                this.form.post(route('sliders.update', [this.site, this.slider]), {
+                    errorBag: 'update',
+                    preserveScroll: true,
                 });
             },
             imagePreview(e) {

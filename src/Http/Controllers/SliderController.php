@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
 use MichelCalisto\Site\Http\Requests\StoreSlider;
 use MichelCalisto\Site\Site;
+use Illuminate\Support\Facades\Storage;
 
 class SliderController extends Controller
 {
@@ -63,11 +64,12 @@ class SliderController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \MichelCalisto\Site\Site  $site
+     * @param  \MichelCalisto\Site\Slider  $slider
      * @return \Illuminate\Http\Response
      */
-    public function edit(Slider $slider)
+    public function edit(Site $site, Slider $slider)
     {
-        return Inertia::render('Slider/Edit', ['item' => $slider]);
+        return Inertia::render('Slider/Edit', ['site' => $site, 'slider' => $slider]);
     }
 
     /**
@@ -75,23 +77,24 @@ class SliderController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \MichelCalisto\Site\Site  $site
+     * @param  \MichelCalisto\Site\Slider  $slider
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Sliser $slider)
+    public function update(Request $request, Site $site, Slider $slider)
     {
         $image_path = '';
         
-        if ($request->hasFile('slider')) {
+        if ($request->hasFile('image_file')) {
             $request->validate([
-                'name' => 'required|unique:sliders,name,'.$slider->id.'|min:3|max:50',
-                'slider' => 'required|slider|mimes:jpeg,jpg,png,gif,svg|max:2048',
+                'name' => 'required|min:3|max:50',
+                'image_file' => 'required|image|mimes:jpeg,jpg,png,gif,svg|max:2048',
             ]);
 
             if(Storage::exists('public/'.$slider->path)){
                 Storage::delete('public/'.$slider->path);
             }
 
-            $image_path = $request->file('slider')->store('sliders', 'public');
+            $image_path = $request->file('image_file')->store('sliders', 'public');
             
             $slider->update([
                 'name' => $request->name,
@@ -99,7 +102,7 @@ class SliderController extends Controller
             ]);
         } else {
             $request->validate([
-                'name' => 'required|unique:sliders,name,'.$slider->id.'|min:3|max:50',
+                'name' => 'required|min:3|max:50',
             ]);
 
             $slider->update([
@@ -107,7 +110,7 @@ class SliderController extends Controller
             ]);
         }
 
-        return Redirect::route('sliders.index');
+        return Redirect::route('sites.show', $site);
     }
 
     /**
