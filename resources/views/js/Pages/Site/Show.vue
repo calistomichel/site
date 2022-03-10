@@ -70,11 +70,11 @@
                                         <icon-edit />
                                     </link-default>
                                 </td>
-                                <!-- <td class="text-sm font-light text-gray-900 px-6 py-4">
-                                    <link-default @click="confirmDeletion(publication)" as="button">
+                                <td class="text-sm font-light text-gray-900 px-6 py-4">
+                                    <link-default @click="confirmDeletion(slider, 'slider')" as="button">
                                         <icon-destroy />
                                     </link-default>
-                                </td> -->
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -129,7 +129,7 @@
                                     </link-default>
                                 </td>
                                 <td class="text-sm font-light text-gray-900 px-6 py-4">
-                                    <link-default @click="confirmDeletion(publication)" as="button">
+                                    <link-default @click="confirmDeletion(publication, 'publication')" as="button">
                                         <icon-destroy />
                                     </link-default>
                                 </td>
@@ -142,11 +142,11 @@
 
         <jet-dialog-modal :show="confirmingDeletion" @close="closeModal">
             <template #title>
-                Delete Publication
+                Delete {{ model }}
             </template>
 
             <template #content>
-                Are you sure you want to delete this publication? Once the site is removed, it will be removed permanently.
+                Are you sure you want to delete this {{ model }}? Once the site is removed, it will be removed permanently.
             </template>
 
             <template #footer>
@@ -202,23 +202,34 @@
             return {
                 confirmingDeletion: false,
                 id: null,
+                model: '',
             }
         },
         methods: {
-            confirmDeletion(id) {
+            confirmDeletion(id, model) {
                 this.confirmingDeletion = true;
                 this.id = id;
+                this.model = model;
             },
             destroy() {
                 if (this.id !== null) {
-                    this.$inertia.delete(this.route('publications.destroy', [this.site, this.id]), {
-                        onSuccess: () => this.closeModal(),
-                    })
+                    if (this.model === 'slider') {
+                        this.$inertia.delete(this.route('sliders.destroy', [this.site, this.id]), {
+                            onSuccess: () => this.closeModal(),
+                        })
+                    } else {
+                        if (this.model === 'publication') {
+                            this.$inertia.delete(this.route('publications.destroy', [this.site, this.id]), {
+                                onSuccess: () => this.closeModal(),
+                            })
+                        } 
+                    }
                 }
             },
             closeModal() {
                 this.confirmingDeletion = false;
                 this.id = null;
+                this.model = '';
             },
         }
     })

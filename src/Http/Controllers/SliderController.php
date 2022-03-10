@@ -117,14 +117,15 @@ class SliderController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \MichelCalisto\Site\Site  $site
+     * @param  \MichelCalisto\Site\Slider  $slider
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Slider $slider)
+    public function destroy(Site $site, Slider $slider)
     {
         if(Storage::exists('public/'.$slider->path)){
             Storage::delete('public/'.$slider->path);
             $slider->delete();
-            return Redirect::route('sliders.index');
+            return Redirect::route('sites.show', $site);
         }
     }
 }
