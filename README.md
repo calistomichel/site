@@ -1,4 +1,4 @@
-# Site
+# Sites
 
 Andamiajes para la contrucción de un Tailwind Site a través del framework Laravel usando Inertia.
 
